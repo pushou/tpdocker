@@ -1,0 +1,7 @@
+FROM debian
+
+RUN apt-get update && apt-get upgrade -y  && apt-get install -y \
+    iputils-ping
+
+ENTRYPOINT ["/bin/ping"]
+CMD ["-c","4","www.iutbeziers.fr"]
